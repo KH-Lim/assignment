@@ -8,5 +8,5 @@ export default function List() {
       console.log(json);
       setList(json);
     });
-  return <>{list}</>;
+  return <>{JSON.stringify(list)}</>;
 }

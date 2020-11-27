@@ -14,7 +14,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
-import List from "./List";
+const List = React.lazy(() => import("./List"));
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -43,7 +43,7 @@ export default function App() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            News
+            Assignment
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>
@@ -63,8 +63,6 @@ export default function App() {
             <Link to="/list">List</Link>
           </li>
         </ul>
-
-        <List />
 
         <Switch>
           <Route path="/about">
