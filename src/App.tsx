@@ -49,20 +49,7 @@ export default function App() {
         </Toolbar>
       </AppBar>
       <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/topics">Topics</Link>
-          </li>
-          <li>
-            <Link to="/list">List</Link>
-          </li>
-        </ul>
+        <Menu />
 
         <Switch>
           <Route path="/about">
@@ -84,11 +71,48 @@ export default function App() {
 }
 
 function Home() {
-  return <h2>Home</h2>;
+  return (
+    <>
+      <h2>
+        <a
+          target="_blank"
+          href="https://docs.google.com/document/d/1nGgpXS1_2muKL_4--Zq73VCeV-PK97dDshZO9JQ-uy0/edit"
+        >
+          과제설명
+        </a>
+      </h2>
+      <ul>
+        <li>fixme: 주석을 참고해 주세요.</li>
+        <li>협업을 위한 리팩토링 및 가독성 높은 코드로 변경해 주세요.</li>
+        <li>SEO, 성능 개선을 위한 작업을 해주세요.</li>
+      </ul>
+    </>
+  );
 }
 
 function About() {
   return <h2>About</h2>;
+}
+
+function Menu() {
+  // fixme: 과제3 햄버거 메뉴 클릭시 아래 메뉴를 mini-variant-drawer 구현
+  // https://material-ui.com/components/drawers/#mini-variant-drawer
+  return (
+    <ul>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+      <li>
+        <Link to="/about">About</Link>
+      </li>
+      <li>
+        <Link to="/topics">Topics</Link>
+      </li>
+      <li>
+        <Link to="/list">List</Link>
+      </li>
+    </ul>
+  );
 }
 
 function Topics() {
