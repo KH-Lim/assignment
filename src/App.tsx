@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,6 +14,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import axios from "axios";
 const List = React.lazy(() => import("./List"));
 
 const useStyles = makeStyles((theme) => ({
@@ -60,6 +61,12 @@ export default function App() {
           </Route>
           <Route path="/list">
             <List />
+          </Route>
+          <Route path="/photo">
+            <Photo />
+          </Route>
+          <Route path="/swiper">
+            <Swiper />
           </Route>
           <Route path="/">
             <Home />
@@ -111,6 +118,12 @@ function Menu() {
       <li>
         <Link to="/list">List</Link>
       </li>
+      <li>
+        <Link to="/photo">Photo</Link>
+      </li>
+      <li>
+        <Link to="/swiperjs">swiperjs</Link>
+      </li>
     </ul>
   );
 }
@@ -151,4 +164,26 @@ function Topic() {
   let { topicId }: any = useParams();
 
   return <h3>Requested topic ID: {topicId}</h3>;
+}
+
+function Photo() {
+  // fixme: grid-list 를 구현해주세요.
+  // https://material-ui.com/components/grid-list/
+
+  useEffect(() => {
+    axios.get("https://jsonplaceholder.typicode.com/photos");
+  }, []);
+
+  return <>Photo</>;
+}
+
+function Swiper() {
+  // fixme: Swiper 를 구현해 주세요.
+  // https://swiperjs.com/demos/ 데모중 원하는
+
+  useEffect(() => {
+    axios.get("https://jsonplaceholder.typicode.com/photos");
+  }, []);
+
+  return <>Slide</>;
 }
