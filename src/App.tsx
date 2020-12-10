@@ -109,6 +109,19 @@ function Home() {
         </li>
         <li>프로젝트 안의 fixme: 주석을 참고해 주세요.</li>
         <li>SEO, 성능 개선을 위한 작업을 해주세요.</li>
+        <li></li>
+      </ul>
+
+      <Typography variant="h6" gutterBottom>
+        과제 제출
+      </Typography>
+      <ul>
+        <li>assignment.zip 파일을 github repository 로 이전해 주세요.</li>
+        <li>아래 과제를 진행해 주세요.</li>
+        <li>
+          7일 이내로 Github Repository URL을 dabin.kim@yanolja.com 로 제출해
+          주시면 됩니다.
+        </li>
       </ul>
 
       <Typography variant="h6" gutterBottom>
