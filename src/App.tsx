@@ -108,8 +108,6 @@ function Home() {
           주세요.
         </li>
         <li>프로젝트 안의 fixme: 주석을 참고해 주세요.</li>
-        <li>SEO, 성능 개선을 위한 작업을 해주세요.</li>
-        <li></li>
       </ul>
 
       <Typography variant="h6" gutterBottom>
