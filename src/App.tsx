@@ -128,7 +128,6 @@ function Home() {
         과제 내용
       </Typography>
       <ol>
-        <li>src/List.tsx 컴포넌트 버그를 수정해 주세요</li>
         <li>
           <Typography variant="subtitle1" gutterBottom>
             Toolbar 의 login 버튼 클릭시 /login 으로 이동하며 로그인 페이지를
@@ -150,6 +149,16 @@ function Home() {
             <br />
             참고:
             https://material-ui.com/components/drawers/#mini-variant-drawer
+          </Typography>
+        </li>
+        <li>
+          <Typography variant="subtitle1" gutterBottom>
+            src/List.tsx 컴포넌트를 수정해 주세요
+          </Typography>
+          <Typography variant="body1" gutterBottom>
+            error를 수정해 주세요 <br />
+            https://material-ui.com/components/tables/ 를 사용해서 comments를
+            테이블에 보여주세요
           </Typography>
         </li>
         <li>
