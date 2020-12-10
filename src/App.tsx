@@ -102,10 +102,7 @@ function Home() {
 
       <ul>
         <li>관리가 되지 않는 레거시 프로젝트라고 가정 합니다.</li>
-        <li>
-          레거시 프로젝트 분석 및 신규 기능 추가 능력을 측정하기 위해
-          고안되었습니다.
-        </li>
+        <li>레거시 프로젝트 분석 및 신규 기능 추가 능력을 측정 합니다.</li>
         <li>
           전체 코드 베이스를 협업을 위한 리팩토링 , 가독성 높은 코드로 변경해
           주세요.
@@ -142,6 +139,11 @@ function Home() {
             https://material-ui.com/components/drawers/#mini-variant-drawer
           </Typography>
         </li>
+        <li>
+          <Link to="/swiper">
+            Swiper 과제 설명은 링크를 클릭해서 확인해 주세요
+          </Link>
+        </li>
       </ol>
     </>
   );
@@ -172,7 +174,7 @@ function Menu() {
         <Link to="/photo">Photo</Link>
       </li>
       <li>
-        <Link to="/swiper">swiperjs</Link>
+        <Link to="/swiper">swiper</Link>
       </li>
     </ul>
   );
@@ -231,7 +233,6 @@ function Photo() {
 
 function Swiper() {
   // fixme: Swiper 를 구현해 주세요.
-  // https://swiperjs.com/demos/ 데모중 택 1
   const useStyles = makeStyles(() =>
     createStyles({
       root: {
