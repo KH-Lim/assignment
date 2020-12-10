@@ -7,7 +7,7 @@ import {
   useRouteMatch,
   useParams,
 } from "react-router-dom";
-import { makeStyles } from "@material-ui/core/styles";
+import { createStyles, makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
@@ -15,7 +15,16 @@ import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import axios from "axios";
+import {
+  CardActions,
+  CardContent,
+  CardHeader,
+  CardMedia,
+} from "@material-ui/core";
+import Card from "@material-ui/core/Card/Card";
 const List = React.lazy(() => import("./List"));
+
+const goToLogin = () => (window.location.href = "/login");
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -46,7 +55,9 @@ export default function App() {
           <Typography variant="h6" className={classes.title}>
             Assignment
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit" onClick={() => goToLogin()}>
+            Login
+          </Button>
         </Toolbar>
       </AppBar>
       <div>
@@ -88,11 +99,50 @@ function Home() {
           과제설명
         </a>
       </h2>
+
       <ul>
-        <li>fixme: 주석을 참고해 주세요.</li>
-        <li>협업을 위한 리팩토링 및 가독성 높은 코드로 변경해 주세요.</li>
+        <li>관리가 되지 않는 레거시 프로젝트라고 가정 합니다.</li>
+        <li>
+          레거시 프로젝트 분석 및 신규 기능 추가 능력을 측정하기 위해
+          고안되었습니다.
+        </li>
+        <li>
+          전체 코드 베이스를 협업을 위한 리팩토링 , 가독성 높은 코드로 변경해
+          주세요.
+        </li>
+        <li>프로젝트 안의 fixme: 주석을 참고해 주세요.</li>
         <li>SEO, 성능 개선을 위한 작업을 해주세요.</li>
       </ul>
+
+      <Typography variant="h6" gutterBottom>
+        과제 내용
+      </Typography>
+      <ol>
+        <li>src/List.tsx 컴포넌트 버그를 수정해 주세요</li>
+        <li>
+          <Typography variant="subtitle1" gutterBottom>
+            Toolbar 의 login 버튼 클릭시 /login 으로 이동하며 로그인 페이지를
+            개발해 주세요.
+          </Typography>
+          <Typography variant="body1" gutterBottom>
+            Email , Password를 입력 받을 수 있고 validation 이 되어야 합니다.
+            <br />
+            참고: https://thefront.maccarianagency.com/signin-simple
+          </Typography>
+        </li>
+        <li>
+          <Typography variant="subtitle1" gutterBottom>
+            Toolbar 왼쪽 햄버거 메뉴 클릭 시 Menu 컴포넌트가 나오게 구현해
+            주세요.
+          </Typography>
+          <Typography variant="body1" gutterBottom>
+            mini-variant-drawer 구현
+            <br />
+            참고:
+            https://material-ui.com/components/drawers/#mini-variant-drawer
+          </Typography>
+        </li>
+      </ol>
     </>
   );
 }
@@ -122,7 +172,7 @@ function Menu() {
         <Link to="/photo">Photo</Link>
       </li>
       <li>
-        <Link to="/swiperjs">swiperjs</Link>
+        <Link to="/swiper">swiperjs</Link>
       </li>
     </ul>
   );
@@ -173,17 +223,53 @@ function Photo() {
   useEffect(() => {
     axios.get("https://jsonplaceholder.typicode.com/photos");
   }, []);
-
+  useEffect(() => {
+    axios.get("https://jsonplaceholder.typicode.com/photos");
+  }, []);
   return <>Photo</>;
 }
 
 function Swiper() {
   // fixme: Swiper 를 구현해 주세요.
-  // https://swiperjs.com/demos/ 데모중 원하는
+  // https://swiperjs.com/demos/ 데모중 택 1
+  const useStyles = makeStyles(() =>
+    createStyles({
+      root: {
+        maxWidth: 800,
+      },
+      media: {
+        height: 600,
+        padding: 10,
+      },
 
-  useEffect(() => {
-    axios.get("https://jsonplaceholder.typicode.com/photos");
-  }, []);
+      expandOpen: {
+        transform: "rotate(180deg)",
+      },
+    })
+  );
+  const classes = useStyles();
+  const [expanded, setExpanded] = React.useState(false);
 
-  return <>Slide</>;
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
+
+  return (
+    <>
+      <Card className={classes.root}>
+        <CardHeader title="아래 이미지와 같은 스와이퍼를 구현해주세요" />
+        <CardMedia className={classes.media} image="./swiper.png" />
+        <CardContent>
+          <Typography paragraph>- 임의의 3개의 이미지로 작업 </Typography>
+          <Typography paragraph>- 왼쪽 이미지가 살짝 보여야함</Typography>
+          <Typography paragraph>
+            - 이미지 하단부에 이미지에 관한 설명이 있어야함{" "}
+          </Typography>
+          <Typography paragraph>- www.dailyhotel.com 페이지 참고</Typography>
+        </CardContent>
+        <CardActions disableSpacing></CardActions>
+      </Card>
+      {/*여기서부터 구현하시면 됩니다*/}
+    </>
+  );
 }
