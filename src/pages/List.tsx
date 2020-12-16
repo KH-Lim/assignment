@@ -5,6 +5,8 @@ export default function List() {
   // fixme: error를 수정해 주세요
   // https://material-ui.com/components/tables/ 을 사용해서 comments를 테이블에 보여주세요
   const [list, setList] = useState([]);
+  
+  const test = 1;
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/comments")
@@ -15,7 +17,7 @@ export default function List() {
       })
       .catch((err)=>{
         console.log(err);
-      })
+      });
   }, []);
 
   // 테이블 컬럼 정보
@@ -40,7 +42,7 @@ export default function List() {
       field: 'body',
       headerName: 'body',
     },
-  ]
+  ];
 
   // return <>{JSON.stringify(list)}</>;
   return <>

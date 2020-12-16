@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
 
-function Home() {
+const Home = () => {
   return (
     <>
       <h2>
@@ -81,6 +81,6 @@ function Home() {
       </ol>
     </>
   );
-}
+};
 
-export default Home
+export default Home;

@@ -5,6 +5,8 @@ import {
   Route,
 } from "react-router-dom";
 
+import LinearProgress from '@material-ui/core/LinearProgress';
+
 const Layout = React.lazy(() => import("./components/Layout"));
 
 const ListPage = React.lazy(() => import("./pages/List"));
@@ -18,7 +20,7 @@ const LoginPage = React.lazy(() => import("./pages/Login"));
 export default function App() {
   return (
     <Router>
-      <Suspense fallback={<div>로딩중</div>}>
+      <Suspense fallback={<LinearProgress/>}>
         <Layout>
           <Switch>
             <Route path="/about">

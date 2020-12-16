@@ -1,22 +1,20 @@
-import React from 'react'
+import React from 'react';
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
   Link,
   useRouteMatch,
-  useParams,
+  useParams
 } from "react-router-dom";
 
 function Topic() {
-  let { topicId }: any = useParams();
+  const { topicId }: any = useParams();
 
   return <h3>Requested topic ID: {topicId}</h3>;
 }
 
-
 function Topics() {
-  let match = useRouteMatch();
+  const match = useRouteMatch();
 
   return (
     <div>
@@ -47,4 +45,4 @@ function Topics() {
   );
 }
 
-export default Topics
+export default Topics;

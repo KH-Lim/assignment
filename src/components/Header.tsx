@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Link } from "react-router-dom";
 
 import clsx from 'clsx';
@@ -106,7 +106,7 @@ const Header: React.FC<HeaderProps> = ({ open, setOpen }) => {
             className={clsx(classes.menuButton, open && classes.hide)}
             color="inherit"
             aria-label="menu"
-            onClick={() => { setOpen(true) }}
+            onClick={() => { setOpen(true); }}
           >
             <MenuIcon />
           </IconButton>
@@ -114,7 +114,7 @@ const Header: React.FC<HeaderProps> = ({ open, setOpen }) => {
             Assignment
           </Typography>
           <Button color="inherit">
-            <Link to='./logig'>
+            <Link to='./login'>
               Login
             </Link>
           </Button>
@@ -131,14 +131,14 @@ const Header: React.FC<HeaderProps> = ({ open, setOpen }) => {
       >
         <IconButton
           className={classes.menuTop}
-          onClick={() => { setOpen(false) }} >
+          onClick={() => { setOpen(false); }} >
           <ChevronLeftIcon />
         </IconButton>
         <Divider />
         <Menu />
       </Drawer>
     </>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
