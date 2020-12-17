@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import {
   CardActions,
@@ -13,6 +13,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/swiper.scss';
+import zIndex from '@material-ui/core/styles/zIndex';
 
 const swiperData = [
   {
@@ -52,12 +53,17 @@ const useStyles = makeStyles(() => createStyles({
     width: '100%',
     height: '500px'
   },
+  contentCard: {
+    width: 275,
+    marginLeft: 30
+  }
+
 }));
 
 function SwiperPage() {
   // fixme: Swiper 를 구현해 주세요.
   const classes = useStyles();
-  const [displayData, setDisplayData] = React.useState(swiperData[0]);
+  const [displayData, setDisplayData] = useState(swiperData[0]);
 
   const params = {
     width: 800,
@@ -71,7 +77,6 @@ function SwiperPage() {
       slideShadows: false,
     },
     onSlideChange: (swiper: any) => {
-      console.log(swiper);
       setDisplayData(swiperData[swiper.activeIndex]);
     }
   };
@@ -102,10 +107,12 @@ function SwiperPage() {
           })}
 
         </Swiper>
-        <CardContent>
-          <Typography paragraph>{displayData.title} </Typography>
-          <Typography paragraph>{displayData.content} </Typography>
-        </CardContent>
+        <Card className={classes.contentCard}>
+          <CardContent>
+            <Typography variant="h5" component="h2">{displayData.title} </Typography>
+            <Typography variant="body2" component="p">{displayData.content} </Typography>
+          </CardContent>
+        </Card>
       </div>
     </>
   );
