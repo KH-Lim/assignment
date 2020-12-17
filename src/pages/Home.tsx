@@ -1,6 +1,6 @@
 import React from 'react';
-import Typography from "@material-ui/core/Typography";
-import { Link } from "react-router-dom";
+import Typography from '@material-ui/core/Typography';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (

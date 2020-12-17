@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 import clsx from 'clsx';
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from '@material-ui/core/styles';
 
-const Header = React.lazy(() => import("./Header"));
+const Header = React.lazy(() => import('./Header'));
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({

@@ -9,28 +9,72 @@ import {
 import Card from '@material-ui/core/Card/Card';
 import Typography from '@material-ui/core/Typography';
 
-function Swiper() {
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/swiper.scss';
+
+const swiperData = [
+  {
+    title: '댕댕이',
+    img: './testImg/img1.png',
+    content: '털뭉치입니다.'
+  },
+  {
+    title: '냥이1',
+    img: './testImg/img2.png',
+    content: '흰색냥이.'
+  },
+  {
+    title: '냥이2',
+    img: './testImg/img3.png',
+    content: '똥색냥이.'
+  }
+];
+
+const useStyles = makeStyles(() => createStyles({
+  root: {
+    maxWidth: 800,
+  },
+  media: {
+    height: 600,
+    padding: 10,
+  },
+
+  expandOpen: {
+    transform: 'rotate(180deg)',
+  },
+  swiperRoot: {
+    width: '840px',
+    height: '100%'
+  },
+  img: {
+    width: '100%',
+    height: '500px'
+  },
+}));
+
+function SwiperPage() {
   // fixme: Swiper 를 구현해 주세요.
-  const useStyles = makeStyles(() => createStyles({
-    root: {
-      maxWidth: 800,
-    },
-    media: {
-      height: 600,
-      padding: 10,
-    },
-
-    expandOpen: {
-      transform: 'rotate(180deg)',
-    },
-  }));
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
+  const [displayData, setDisplayData] = React.useState(swiperData[0]);
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
+  const params = {
+    width: 800,
+    height: 500,
+    slidesPerView: 1,
+    spaceBetween: 10,
+    pagination: {
+      clickable: true
+    },
+    coverflowEffect: {
+      slideShadows: false,
+    },
+    onSlideChange: (swiper: any) => {
+      console.log(swiper);
+      setDisplayData(swiperData[swiper.activeIndex]);
+    }
   };
-
   return (
     <>
       <Card className={classes.root}>
@@ -47,8 +91,24 @@ function Swiper() {
         <CardActions disableSpacing></CardActions>
       </Card>
       {/* 여기서부터 구현하시면 됩니다 */}
+      <div className={classes.swiperRoot}>
+        <h2>Swiper</h2>
+        <Swiper
+          {...params}
+          style={{ paddingLeft: '30px' }}
+        >
+          {swiperData.map((slideContent, index) => {
+            return <SwiperSlide ><img src={slideContent.img} className={classes.img} /></SwiperSlide>;
+          })}
+
+        </Swiper>
+        <CardContent>
+          <Typography paragraph>{displayData.title} </Typography>
+          <Typography paragraph>{displayData.content} </Typography>
+        </CardContent>
+      </div>
     </>
   );
 }
 
-export default Swiper;
+export default SwiperPage;

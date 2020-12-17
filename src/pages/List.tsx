@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import { DataGrid } from '@material-ui/data-grid';
 
 export default function List() {
@@ -9,7 +9,7 @@ export default function List() {
   const test = 1;
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/comments")
+    fetch('https://jsonplaceholder.typicode.com/comments')
       .then((response) => response.json())
       .then((json) => {
         console.log(json);

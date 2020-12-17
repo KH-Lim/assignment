@@ -8,6 +8,12 @@
   ],
   "rules": {
     "semi": ["error", "always"],
+    "comma-spacing": ["error", { "before": false, "after": true }],				// {a,b,c} x {a, b, c} O
+    "no-multi-spaces": ["error", { "ignoreEOLComments": true }],					// 쓸모없는 공간 x
+    "prefer-template": ["error"],																					// 무조건 `` 템플릿으로 강제z
+    "key-spacing": ["error"],																							// { a:1, b:2 } x { a: 1, b: 2 } O
+    "object-curly-spacing": ["error", "always"],													// {a: 1 } x { a: 1 } o
+    "quotes": ["error", "single", { "avoidEscape": true }],
 
     "react/react-in-jsx-scope": "off",
 

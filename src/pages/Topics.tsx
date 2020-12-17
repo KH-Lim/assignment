@@ -5,7 +5,7 @@ import {
   Link,
   useRouteMatch,
   useParams
-} from "react-router-dom";
+} from 'react-router-dom';
 
 function Topic() {
   const { topicId }: any = useParams();

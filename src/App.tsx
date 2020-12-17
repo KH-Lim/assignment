@@ -1,21 +1,21 @@
-import React, { Suspense } from "react";
+import React, { Suspense } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-} from "react-router-dom";
+} from 'react-router-dom';
 
 import LinearProgress from '@material-ui/core/LinearProgress';
 
-const Layout = React.lazy(() => import("./components/Layout"));
+const Layout = React.lazy(() => import('./components/Layout'));
 
-const ListPage = React.lazy(() => import("./pages/List"));
-const HomePage = React.lazy(() => import("./pages/Home"));
-const AboutPage = React.lazy(() => import("./pages/About"));
-const PhotoPage = React.lazy(() => import("./pages/Photo"));
-const TopicsPage = React.lazy(() => import("./pages/Topics"));
-const SwiperPage = React.lazy(() => import("./pages/Swiper"));
-const LoginPage = React.lazy(() => import("./pages/Login"));
+const ListPage = React.lazy(() => import('./pages/List'));
+const HomePage = React.lazy(() => import('./pages/Home'));
+const AboutPage = React.lazy(() => import('./pages/About'));
+const PhotoPage = React.lazy(() => import('./pages/Photo'));
+const TopicsPage = React.lazy(() => import('./pages/Topics'));
+const SwiperPage = React.lazy(() => import('./pages/Swiper'));
+const LoginPage = React.lazy(() => import('./pages/Login'));
 
 export default function App() {
   return (
