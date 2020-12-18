@@ -13,7 +13,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/swiper.scss';
-import zIndex from '@material-ui/core/styles/zIndex';
 
 const swiperData = [
   {
